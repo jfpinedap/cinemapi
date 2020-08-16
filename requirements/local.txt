@@ -1,0 +1,5 @@
+-r ./base.txt
+
+# Django
+# ------------------------------------------------------------------------------
+pytest-django==3.4.8  # https://github.com/pytest-dev/pytest-django

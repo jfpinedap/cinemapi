@@ -1,0 +1,38 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  django: &django
+    container_name: cinemapi_local_django
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: cinemapi_local_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    env_file:
+      - ./.envs/.local
+    ports:
+      - "8000:8000"
+    command: /start
+    restart: always
+
+  postgres:
+    container_name: cinemapi_local_postgres
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: cinemapi_local_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local
+    ports:
+      - "5432"
+    restart: always

@@ -1,0 +1,21 @@
+# General
+# ------------------------------------------------------------------------------
+DJANGO_DEBUG=False
+GIT_PYTHON_REFRESH=quiet
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=simet+u4zfqq+-(xb)2)&fno0-vef9o3!w!m&$dreji$#8^_2=ss&strik
+DJANGO_ADMIN_URL=admin/
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,ec2-52-90-243-117.compute-1.amazonaws.com
+DOMAIN=http://ec2-52-90-243-117.compute-1.amazonaws.com
+
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=db-test.cxd9hx0ggxaw.us-east-1.rds.amazonaws.com
+POSTGRES_PORT=5432
+POSTGRES_DB=test_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=it*test1
+
+# Gunicorn
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4

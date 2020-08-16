@@ -1,0 +1,14 @@
+# General
+# ------------------------------------------------------------------------------
+DJANGO_DEBUG=True
+GIT_PYTHON_REFRESH=quiet
+DJANGO_SETTINGS_MODULE=config.settings.local
+DJANGO_SECRET_KEY=sime7k3_0!!##enw=&7&e@*gugq9^s^_2b(e16#@z*dyh!qm!ic)e)trik
+
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=cinemapi_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=cin1234*

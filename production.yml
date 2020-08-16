@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  production_django: &django
+    container_name: cinemapi_production_django
+    build:
+      context: .
+      dockerfile: ./compose/production/django/Dockerfile
+    image: cinemapi_production_django
+    env_file:
+      - .envs/.production
+    expose:
+      - "8000"
+    command: /start
+    restart: always
+
+  nginx:
+    container_name: cinema_nginx
+    build:
+      context: .
+      dockerfile: ./compose/nginx/Dockerfile
+    volumes:
+      - ./staticfiles:/static
+      - ./ssl/:/ssl
+    ports:
+      - "80:80"
+    depends_on:
+      - production_django
+    restart: always

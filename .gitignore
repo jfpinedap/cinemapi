@@ -1,0 +1,10 @@
+# results files for debug
+**/files
+
+# vscode configurations
+/.vscode/
+.editorconfig
+
+*.pyc
+*.pyo
+.idea
