@@ -96,7 +96,7 @@ LOGGING = {
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', 
+        'ENGINE': env.str("POSTGRES_ENGINE", "django.db.backends.sqlite3"),
         'NAME': env.str('POSTGRES_DB'),
         'USER': env.str('POSTGRES_USER'),
         'PASSWORD': env.str('POSTGRES_PASSWORD'),

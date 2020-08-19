@@ -10,6 +10,7 @@ DOMAIN=http://ec2-52-90-243-117.compute-1.amazonaws.com
 
 # PostgreSQL
 # ------------------------------------------------------------------------------
+POSTGRES_ENGINE=django.db.backends.postgresql
 POSTGRES_HOST=db-test.cxd9hx0ggxaw.us-east-1.rds.amazonaws.com
 POSTGRES_PORT=5432
 POSTGRES_DB=test_db

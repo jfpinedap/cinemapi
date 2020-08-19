@@ -18,7 +18,7 @@ services:
     container_name: cinema_nginx
     build:
       context: .
-      dockerfile: ./compose/nginx/Dockerfile
+      dockerfile: ./compose/production/nginx/Dockerfile
     volumes:
       - ./staticfiles:/static
       - ./ssl/:/ssl
