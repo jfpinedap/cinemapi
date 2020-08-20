@@ -1,5 +1,5 @@
 # staticfiles
-**/staticfiles
+/staticfiles
 
 # results files for debug
 **/files
