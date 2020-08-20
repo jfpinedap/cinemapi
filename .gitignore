@@ -1,3 +1,6 @@
+# staticfiles
+/staticfiles
+
 # results files for debug
 **/files
 

@@ -1,11 +1,16 @@
 version: '3'
 
+volumes:
+  production_static: {}
+
 services:
   production_django: &django
     container_name: cinemapi_production_django
     build:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
+    volumes:
+      - production_static:/app/staticfiles
     image: cinemapi_production_django
     env_file:
       - .envs/.production
@@ -18,9 +23,9 @@ services:
     container_name: cinema_nginx
     build:
       context: .
-      dockerfile: ./compose/nginx/Dockerfile
+      dockerfile: ./compose/production/nginx/Dockerfile
     volumes:
-      - ./staticfiles:/static
+      - production_static:/static
       - ./ssl/:/ssl
     ports:
       - "80:80"

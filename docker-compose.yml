@@ -24,10 +24,7 @@ services:
 
   postgres:
     container_name: cinemapi_local_postgres
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: cinemapi_local_postgres
+    image: postgres:latest
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups

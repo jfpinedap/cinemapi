@@ -7,18 +7,6 @@ ENV PYTHONUNBUFFERED 1
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
-
-RUN apk add --no-cache --virtual .build-deps-edge \
-  --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-  gdal-dev \
-  geos-dev \
-  proj-dev \
-  gdal \
-  geos \
-  proj
-
-RUN apk add --update curl gcc g++
  
 RUN pip install --upgrade pip
  

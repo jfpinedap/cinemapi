@@ -7,6 +7,7 @@ DJANGO_SECRET_KEY=sime7k3_0!!##enw=&7&e@*gugq9^s^_2b(e16#@z*dyh!qm!ic)e)trik
 
 # PostgreSQL
 # ------------------------------------------------------------------------------
+POSTGRES_ENGINE=django.db.backends.postgresql
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 POSTGRES_DB=cinemapi_db

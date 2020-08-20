@@ -7,19 +7,7 @@ ENV PYTHONUNBUFFERED 1
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
-
-RUN apk add --no-cache --virtual .build-deps-edge \
-  --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-  gdal-dev \
-  geos-dev \
-  proj-dev \
-  gdal \
-  geos \
-  proj
-
-RUN apk add --update curl gcc g++
- 
+    
 RUN pip install --upgrade pip
 
 RUN addgroup -S django \
@@ -43,6 +31,7 @@ RUN sed -i 's/\r//' /start
 RUN chmod +x /start
 RUN chown django /start
 
+RUN mkdir /app/staticfiles
 RUN chown -R django:root /app/staticfiles
 
 USER django
